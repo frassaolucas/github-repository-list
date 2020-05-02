@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Loading = styled.div`
   color: #fff;
@@ -57,6 +57,41 @@ export const IssueList = styled.div`
     & + li {
       margin-top: 10px;
     }
+
+    div {
+      flex: 1;
+      margin-left: 15px;
+
+      strong {
+        font-size: 16px;
+
+        a {
+          text-decoration: none;
+          color: #333;
+
+          &:hover {
+            color: #7159c1;
+          }
+        }
+
+        span {
+          background-color: #eee;
+          color: #333;
+          border-radius: 2px;
+          font-size: 12px;
+          font-weight: 600;
+          height: 20px;
+          padding: 3px 4px;
+          margin-left: 10px;
+        }
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #999;
+      }
+    }
   }
 
   img {
@@ -65,43 +100,76 @@ export const IssueList = styled.div`
     border-radius: 50%;
     border: 2px solid #eee;
   }
-
-  div {
-    flex: 1;
-    margin-left: 15px;
-
-    strong {
-      font-size: 16px;
-
-      a {
-        text-decoration: none;
-        color: #333;
-
-        &:hover {
-          color: #7159c1;
-        }
-      }
-
-      span {
-        background-color: #eee;
-        color: #333;
-        border-radius: 2px;
-        font-size: 12px;
-        font-weight: 600;
-        height: 20px;
-        padding: 3px 4px;
-        margin-left: 10px;
-      }
-    }
-
-    p {
-      margin-top: 5px;
-      font-size: 12px;
-      color: #999;
-    }
-  }
 `;
 
 export const IssueFilter = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+
+  button {
+    max-width: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #7159c1;
+    border-color: #7159c1;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: color 0.2s, background-color 0.2s;
+
+    & + button {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      background-color: #7159c1;
+      color: #fff;
+    }
+
+    &:nth-child(${(props) => props.active + 1}) {
+      background-color: #7159c1;
+      color: #fff;
+    }
+  }
+`;
+
+export const PageActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  color: #999;
+  font-size: 12px;
+
+  button {
+    max-width: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-color: #7159c1;
+    border-radius: 4px;
+    color: #7159c1;
+    transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: unset;
+        color: #7159c1;
+      }
+    }
+
+    &:hover {
+      background-color: #7159c1;
+      color: #fff;
+    }
+  }
 `;
