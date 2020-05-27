@@ -2,7 +2,11 @@
 Rocketseat - React Challenge
 
 ## Front-end
-<img src=".github/frontend.gif" />
+<p align="center">
+  <img src=".github/frontend.gif" />
+</p>
 
 ## Mobile
-<img src=".github/mobile.gif" />
+<p align="center">
+  <img src=".github/mobile.gif" />
+</p>
